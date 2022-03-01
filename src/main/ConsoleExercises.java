@@ -6,6 +6,7 @@ public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
         Scanner scanner = new Scanner(System.in);
+//        scanner.useDelimiter("\n");
 
 //        System.out.printf("The value of pi is approximately %s", pi);
 //
@@ -27,11 +28,16 @@ public class ConsoleExercises {
 //        System.out.println(sentenceInput);
 
         System.out.print("Enter width of room : ");
-        double roomWidth = Double.parseDouble(scanner.nextLine());
-        System.out.print("\nEnter Length of room: ");
-        double roomLength = Double.parseDouble(scanner.nextLine());
+        double roomWidth = scanner.nextDouble();
+        System.out.print("Enter Length of room: ");
+        double roomLength = scanner.nextDouble();
 
-        System.out.println("The area of the room is: " + (roomLength * roomWidth));
-        System.out.println("The perimeter of the room is: " + ((roomLength * 2) + (roomWidth * 2)));
+        double roomArea = roomLength * roomWidth;
+        double roomPerimeter = (roomLength * 2) + (roomWidth * 2);
+
+        System.out.printf("The area of the room is: %.2f\n", roomArea);
+        System.out.printf("The perimeter of the room is: %.2f", roomPerimeter);
+
+        scanner.close();
     }
 }
