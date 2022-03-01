@@ -9,13 +9,13 @@ public class ControlFlowExercises {
             i++;
         }
 
-        int j = 0;
+        int j = 100;
 
         do {
-            if (j % 2 == 0){
-                System.out.println(j);
-            }
-            j++;
-        }while (j <= 100);
+            System.out.println(j);
+
+            j -= 5;
+
+        }while (j >= -10);
     }
 }
