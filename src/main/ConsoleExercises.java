@@ -8,24 +8,27 @@ public class ConsoleExercises {
         Scanner scanner = new Scanner(System.in);
 //        scanner.useDelimiter("\n");
 
-//        System.out.printf("The value of pi is approximately %s", pi);
-//
-//        System.out.print("\nEnter a integar: ");
-//        String userInput = scanner.next();
-//
-//        System.out.println("You entered: --> \"" + userInput + "\" <--");
-//
-//        System.out.println("Enter 3 words.");
-//        String firstWordInput = scanner.next();
-//        String secondWordInput = scanner.next();
-//        String thirdWordInput = scanner.next();
-//
-//        System.out.println(firstWordInput + " " + secondWordInput + " " + thirdWordInput);
+        System.out.printf("The value of pi is approximately %.2f", pi);
 
-//        System.out.println("Enter a sentence");
-//        String sentenceInput = scanner.nextLine();
-//
-//        System.out.println(sentenceInput);
+        System.out.print("\nEnter a integar: ");
+        int userInput = scanner.nextInt();
+
+        System.out.println("You entered: --> \"" + userInput + "\" <--");
+
+        System.out.println("Enter 3 words.");
+        String firstWordInput = scanner.next();
+        String secondWordInput = scanner.next();
+        String thirdWordInput = scanner.next();
+
+        System.out.println(firstWordInput + " " + secondWordInput + " " + thirdWordInput);
+
+        String bufferCatch = scanner.nextLine();
+        System.out.println(bufferCatch);
+
+        System.out.println("Enter a sentence");
+        String sentenceInput = scanner.nextLine();
+
+        System.out.println(sentenceInput);
 
         System.out.print("Enter width of room : ");
         double roomWidth = scanner.nextDouble();
