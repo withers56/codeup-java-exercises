@@ -57,22 +57,45 @@ public class ControlFlowExercises {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("What number would you like to go to?: ");
-        int userNumber = scanner.nextInt();
-        System.out.println("    Here is your table!");
-        System.out.println("|--------|----------|----------|");
-        System.out.println("| Number | Squared  | Cubed    |");
-        System.out.println("|--------|----------|----------|");
+//        System.out.print("What number would you like to go to?: ");
+//        int userNumber = scanner.nextInt();
+//        System.out.println("    Here is your table!");
+//        System.out.println("|--------|----------|----------|");
+//        System.out.println("| Number | Squared  | Cubed    |");
+//        System.out.println("|--------|----------|----------|");
+//
+//
+//        for (int i = 1; i <= userNumber; i++) {
+//
+//            int iSquared = i * i;
+//            int iCubed = i * i * i;
+//
+//            System.out.printf("| %-7d|   %-7d|   %-7d|\n", i, iSquared, iCubed);
+//        }
+//        System.out.println("|--------|----------|----------|");
 
+        boolean confirmation = true;
 
-        for (int i = 1; i <= userNumber; i++) {
+        do {
 
-            int iSquared = i * i;
-            int iCubed = i * i * i;
+            System.out.print("Please enter a whole number grade: ");
+            int grade = scanner.nextInt();
 
-            System.out.printf("| %-7d|   %-7d|   %-7d|\n", i, iSquared, iCubed);
-        }
-        System.out.println("|--------|----------|----------|");
+            if (grade >= 90) {
+                System.out.println("A");
+            } else if (grade >= 80) {
+                System.out.println("B");
+            } else if (grade >= 70) {
+                System.out.println("C");
+            } else if (grade >= 60) {
+                System.out.println("D");
+            } else System.out.println("F");
 
+            System.out.print("Continue? [y/n] ");
+            String userInput = scanner.next();
+
+            confirmation = userInput.equals("y");
+        }while (confirmation);
     }
 }
+
