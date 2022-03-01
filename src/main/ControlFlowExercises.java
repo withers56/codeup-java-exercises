@@ -82,16 +82,44 @@ public class ControlFlowExercises {
             int grade = scanner.nextInt();
 
             if (grade >= 90) {
-                System.out.println("A");
-            } else if (grade >= 80) {
-                System.out.println("B");
-            } else if (grade >= 70) {
-                System.out.println("C");
-            } else if (grade >= 60) {
-                System.out.println("D");
-            } else System.out.println("F");
+                System.out.print("A");
+                if (grade > 95){
+                    System.out.print("+");
+                } else if (grade < 95){
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
+            else if (grade >= 80) {
+                System.out.print("B");
+                if (grade > 85){
+                    System.out.print("+");
+                } else if (grade < 85){
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
+            else if(grade >= 70) {
+                System.out.print("C");
+                if (grade > 75){
+                    System.out.print("+");
+                } else if (grade < 75){
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
+            else if(grade >= 60) {
+                System.out.print("D");
+                if (grade > 65){
+                    System.out.print("+");
+                } else if (grade < 65){
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
+            else System.out.println("F");
 
-            System.out.print("Continue? [y/n] ");
+            System.out.print("Continue? [y/n]: ");
             String userInput = scanner.next();
 
             confirmation = userInput.equals("y");
