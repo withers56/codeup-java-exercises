@@ -28,13 +28,13 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
-//        long k = 2;
-//
-//        do {
-//            System.out.println(k);
-//
-//            k = k * k;
-//        }while (k <= 1000000);
+        long k = 2;
+
+        do {
+            System.out.println(k);
+
+            k = k * k;
+        }while (k <= 1000000);
 
 //        for (long i = 2; i <= 1000000 ; i = i * i) {
 //            System.out.println(i);
