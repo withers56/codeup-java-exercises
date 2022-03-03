@@ -15,7 +15,8 @@ public class MethodsExercises {
 //        System.out.println(getInteger(1, 10));
 
 //        factorial();
-        rollTheDice();
+//        rollTheDice();
+        guessTheNumber(5);
 
     }
 
@@ -110,6 +111,34 @@ public class MethodsExercises {
         } while (userPickSides);
 
         System.out.print("Have a nice day!");
+    }
+
+    public static void guessTheNumber (int attemptAmount) {
+        Scanner sc = new Scanner(System.in);
+        int randomNumber = (int) Math.ceil(Math.random() * 100);
+
+        int userGuessedNumber = 0;
+        int userAttempt = 0;
+
+        do {
+
+            if (userAttempt == attemptAmount){
+                System.out.println("You ran out of attempts!");
+                return;
+            }
+
+            userAttempt++;
+
+            System.out.print("Guess the number!: ");
+            userGuessedNumber = sc.nextInt();
+
+            if (userGuessedNumber == randomNumber) {
+                System.out.println("You did it!");
+                System.out.println("It took you " + userAttempt + " attempts!");
+            } else if (userGuessedNumber > randomNumber) {
+                System.out.println("Lower!");
+            } else System.out.println("Higher!");
+        } while (userGuessedNumber != randomNumber);
     }
 
 }
