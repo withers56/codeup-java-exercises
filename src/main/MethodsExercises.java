@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
 
-//        System.out.println(add(2, 3));
-//        System.out.println(subtract(3, 7));
-//        System.out.println(multiply(5, 5));
-//        System.out.println(bonusMultiply(5, 5));
-//        System.out.println(divide(4, 2));
-//        System.out.println(modulus(4, 2));
-//
-//        System.out.println(getInteger(1, 10));
+        System.out.println(add(2, 3));
+        System.out.println(subtract(3, 7));
+        System.out.println(multiply(5, 5));
+        System.out.println(bonusMultiply(5, 5));
+        System.out.println(divide(4, 2));
+        System.out.println(modulus(4, 2));
 
-//        factorial();
-//        rollTheDice();
+        System.out.println(getInteger(1, 10));
+
+        factorial();
+        rollTheDice();
         guessTheNumber(5);
 
     }
@@ -115,7 +115,7 @@ public class MethodsExercises {
 
     public static void guessTheNumber (int attemptAmount) {
         Scanner sc = new Scanner(System.in);
-        int randomNumber = (int) Math.ceil(Math.random() * 100);
+        int randomNumber = (int) Math.ceil(Math.random() * 1000);
 
         int userGuessedNumber = 0;
         int userAttempt = 0;
