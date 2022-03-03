@@ -33,8 +33,16 @@ public class ControlFlowExercises {
         do {
             System.out.println(k);
 
-            k = k * k;
-        }while (k <= 1000000);
+            k *= k;
+        } while ( k <= 1000000);
+
+//        int w = 2;
+
+//        do {
+//            System.out.println(w);
+//
+//            w = (int) Math.pow(w, 2);
+//        }while (w < 1000000);
 
 //        for (long i = 2; i <= 1000000 ; i = i * i) {
 //            System.out.println(i);
