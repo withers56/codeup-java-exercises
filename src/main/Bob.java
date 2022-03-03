@@ -12,7 +12,7 @@ public class Bob {
         while (willContinue){
 
             System.out.print("Ask Bob something!: ");
-            String userInput = scanner.nextLine();
+            String userInput = scanner.nextLine().trim();
 
             System.out.println("You: " + userInput);
 
