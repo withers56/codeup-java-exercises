@@ -140,5 +140,4 @@ public class MethodsExercises {
             } else System.out.println("Higher!");
         } while (userGuessedNumber != randomNumber);
     }
-
 }
