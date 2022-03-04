@@ -4,6 +4,9 @@ public class HelloWorld{
     public static void main(String[] args) {
         System.out.println("Hello, World!");
 
+        String test = "String" + 1;
+        System.out.println(1);
+
         int myFavoriteNumber = 24;
         System.out.println(myFavoriteNumber);
 

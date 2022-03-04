@@ -115,7 +115,7 @@ public class MethodsExercises {
 
     public static void guessTheNumber (int attemptAmount) {
         Scanner sc = new Scanner(System.in);
-        int randomNumber = (int) Math.ceil(Math.random() * 1000);
+        int randomNumber = (int) Math.ceil(Math.random() * 100);
 
         int userGuessedNumber = 0;
         int userAttempt = 0;
