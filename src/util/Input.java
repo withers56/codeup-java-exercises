@@ -14,4 +14,11 @@ public class Input {
         String stringInput = scanner.nextLine();
         return stringInput;
     }
+
+    public boolean yesNo(){
+        System.out.print("Yes or no?: ");
+        String yesOrNoString = scanner.nextLine().trim();
+
+        return yesOrNoString.equalsIgnoreCase("Yes") || yesOrNoString.equalsIgnoreCase("y");
+    }
 }
