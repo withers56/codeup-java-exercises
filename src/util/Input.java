@@ -3,16 +3,15 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public Input() {
-        scanner = new Scanner(System.in);
+        scanner =  new Scanner(System.in);
     }
 
     public String getString() {
         System.out.print("Input string: ");
-        String stringInput = scanner.nextLine();
-        return stringInput;
+        return scanner.nextLine();
     }
 
     public boolean yesNo(){
@@ -24,20 +23,31 @@ public class Input {
 
     public int getInt (int min, int max) {
         System.out.print("Enter a num between " + min + " and " + max + ": ");
-        int userNum = scanner.nextInt();
 
-        if (min <= userNum && userNum <= max) {
-            System.out.println("Valid!");
-            return userNum;
+        while (true) {
+            int userNum = getInt();
+
+            if (min <= userNum && userNum <= max) {
+                System.out.println("Valid!");
+                return userNum;
+            }
+            System.out.println("Invalid.");
         }
 
-        System.out.println("Invalid.");
-        return getInt(min, max);
     }
 
     public int getInt () {
         System.out.print("Enter a num: ");
-        return scanner.nextInt();
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int result = scanner.nextInt();
+                scanner.nextLine();
+                return result;
+            }
+            System.out.println("Invalid input, try again.");
+            scanner.nextLine();
+        }
     }
 
     public double getDouble (double min, double max) {
