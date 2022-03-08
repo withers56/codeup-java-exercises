@@ -19,4 +19,16 @@ public class Square extends Rectangle {
     public double getPerimeter() {
         return side * 4;
     }
+
+    //accessors
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+        this.length = side;
+        this.width = side;
+    }
 }
