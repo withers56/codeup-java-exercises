@@ -36,6 +36,21 @@ public class Input {
 
     }
 
+    public int getInt (int min, int max, String prompt) {
+        System.out.printf("%s", prompt);
+
+        while (true) {
+            int userNum = getInt();
+
+            if (min <= userNum && userNum <= max) {
+                System.out.println("Valid!");
+                return userNum;
+            }
+            System.out.println("Invalid.");
+        }
+
+    }
+
     public int getInt () {
         System.out.print("Enter a num: ");
 
@@ -66,5 +81,9 @@ public class Input {
     public double getDouble () {
         System.out.print("Enter a double num: ");
         return scanner.nextDouble();
+    }
+
+    public void close() {
+        scanner.close();
     }
 }
