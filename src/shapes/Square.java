@@ -1,6 +1,6 @@
 package shapes;
 
-class Square extends Quadrilateral implements Measurable{
+public class Square extends Quadrilateral{
 
 
     public Square(double side) {
@@ -14,4 +14,6 @@ class Square extends Quadrilateral implements Measurable{
     public double getPerimeter() {
         return this.length * 4;
     }
+
+
 }
