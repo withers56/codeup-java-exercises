@@ -22,7 +22,6 @@ public class Input {
     }
 
     public int getInt (int min, int max) {
-        System.out.print("Enter a num between " + min + " and " + max + ": ");
 
         while (true) {
             int userNum = getInt();
