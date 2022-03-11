@@ -14,8 +14,20 @@ public class Input {
         return scanner.nextLine();
     }
 
+    public String getString(String prompt) {
+        System.out.printf("%s", prompt);
+        return scanner.nextLine();
+    }
+
     public boolean yesNo(){
         System.out.print("Yes or no?: ");
+        String yesOrNoString = scanner.nextLine().trim();
+
+        return yesOrNoString.equalsIgnoreCase("Yes") || yesOrNoString.equalsIgnoreCase("y");
+    }
+
+    public boolean yesNo(String prompt){
+        System.out.printf("%s", prompt);
         String yesOrNoString = scanner.nextLine().trim();
 
         return yesOrNoString.equalsIgnoreCase("Yes") || yesOrNoString.equalsIgnoreCase("y");
@@ -52,6 +64,20 @@ public class Input {
 
     public int getInt () {
         System.out.print("Enter a num: ");
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int result = scanner.nextInt();
+                scanner.nextLine();
+                return result;
+            }
+            System.out.println("Invalid input, try again.");
+            scanner.nextLine();
+        }
+    }
+
+    public int getInt (String prompt) {
+        System.out.printf("%s", prompt);
 
         while (true) {
             if (scanner.hasNextInt()) {
