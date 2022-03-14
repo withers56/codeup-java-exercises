@@ -63,7 +63,6 @@ public class Input {
     }
 
     public int getInt () {
-        System.out.print("Enter a num: ");
 
         while (true) {
             if (scanner.hasNextInt()) {
