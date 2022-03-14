@@ -33,6 +33,13 @@ public class Student {
         return gradeTotal / studentGrades.size();
     }
 
+    public void getStudentGrades() {
+        for (int i = 0; i < studentGrades.size() ; i++) {
+            System.out.print(studentGrades.get(i) + " ");
+        }
+        System.out.println();
+    }
+
 
 
     //accessors
@@ -45,7 +52,7 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public ArrayList<Double> getStudentGrades() {
+    public ArrayList<Double> getStudentGradesArray() {
         return studentGrades;
     }
 }

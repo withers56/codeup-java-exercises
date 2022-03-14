@@ -31,24 +31,30 @@ public class GradesApplication {
         boolean userWillContinue = true;
 
         do {
-            System.out.println("Welcome!\n");
-            System.out.println("Here are the Github usernames of our students!\n");
-            System.out.print("|");
-            for (int i = 0; i < students.size(); i++) {
-                System.out.print(" " + usernames[i] + " |");
-            }
-            System.out.println("\n\nWhat student would you like to see more information on?");
+            printUsernames(students, usernames);
 
             String userChoice = input.getString();
             System.out.println(userChoice);
 
             System.out.println("\nName: " + students.get(userChoice).getStudentName() + " -- Github username: " + userChoice);
-            System.out.printf("Grade average: %.4s\n\n", students.get(userChoice).getGradeAverage());
+            System.out.printf("Grade average: %.4s\n", students.get(userChoice).getGradeAverage());
+            System.out.print("Grades: ");
+            students.get(userChoice).getStudentGrades();
 
             System.out.println("Would you like to see another student?");
 
             userWillContinue = input.yesNo();
         } while (userWillContinue);
+    }
+
+    public static void printUsernames(HashMap<String, Student> students, String[] usernames) {
+        System.out.println("Welcome!\n");
+        System.out.println("Here are the Github usernames of our students!\n");
+        System.out.print("|");
+        for (int i = 0; i < students.size(); i++) {
+            System.out.print(" " + usernames[i] + " |");
+        }
+        System.out.println("\n\nWhat student would you like to see more information on?");
     }
 
 
