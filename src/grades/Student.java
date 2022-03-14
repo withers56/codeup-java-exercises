@@ -1,23 +1,46 @@
 package grades;
 
+import util.Input;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 public class Student {
 
-    public static void main(String[] args) {
-        Student student1 = new Student("william");
-        System.out.println(student1.getStudentName());
-        student1.addGrade(99);
-        student1.addGrade(88);
-        System.out.println(student1.getGradeAverage());
-    }
-
     private String studentName;
     private ArrayList<Double> studentGrades;
+    private HashMap<String, String> attendance;
 
     public Student(String studentName) {
         this.studentName = studentName;
         studentGrades = new ArrayList<>();
+        attendance = new HashMap<>();
+        attendance.put("2022-3-14", "P");
+        attendance.put("2022-3-13", "A");
+
+    }
+
+    public void recordAttendance(String date, String value) {
+
+        if (value.equalsIgnoreCase("p") || value.equalsIgnoreCase("a")) {
+            attendance.put(date, value);
+        }
+
+        System.out.println("Invalid value");
+    }
+
+    public double attendancePercentage() {
+        Set<String> dates = attendance.keySet();
+        double absences = 0;
+
+        for (String date : dates) {
+
+            if (attendance.get(date).equalsIgnoreCase("A")) {
+                absences += 1;
+            }
+        }
+        return (dates.size() - absences) / dates.size();
     }
 
     public void addGrade(double grade) {

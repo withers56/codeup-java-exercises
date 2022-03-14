@@ -4,8 +4,11 @@ import main.ServerNameGenerator;
 import util.Input;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class GradesApplication {
+
+
 
     public static void main(String[] args) {
 
@@ -22,6 +25,10 @@ public class GradesApplication {
         students.put(usernames[2], new Student("jack"));
         students.put(usernames[3], new Student("kyle"));
 
+        Set<String> keys = students.keySet();
+
+        System.out.println(keys);
+
         for (int i = 0; i < usernames.length; i++) {
 
             for (int j = 0; j < 3; j++) {
@@ -35,6 +42,7 @@ public class GradesApplication {
         boolean userWillContinue = true;
         boolean runProgram = true;
 
+        System.out.println(students.get(usernames[0]).attendancePercentage());
 
         while (runProgram) {
 
@@ -54,6 +62,7 @@ public class GradesApplication {
                     System.out.printf("Grade average: %.4s\n", students.get(userChoice).getGradeAverage());
                     System.out.print("Grades: ");
                     students.get(userChoice).getStudentGrades();
+                    System.out.println("Attendance percentage: " + students.get(userChoice).attendancePercentage());
 
                     System.out.println("Would you like to see another student?");
 
