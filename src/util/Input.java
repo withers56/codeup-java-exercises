@@ -10,7 +10,6 @@ public class Input {
     }
 
     public String getString() {
-        System.out.print("Input string: ");
         return scanner.nextLine();
     }
 
@@ -63,15 +62,12 @@ public class Input {
     }
 
     public int getInt () {
-
         while (true) {
-            if (scanner.hasNextInt()) {
-                int result = scanner.nextInt();
-                scanner.nextLine();
-                return result;
+            try {
+                return Integer.parseInt(getString());
+            }catch (Throwable e) {
+                System.out.println("That is not a integer!");
             }
-            System.out.println("Invalid input, try again.");
-            scanner.nextLine();
         }
     }
 
@@ -79,32 +75,47 @@ public class Input {
         System.out.printf("%s", prompt);
 
         while (true) {
-            if (scanner.hasNextInt()) {
-                int result = scanner.nextInt();
-                scanner.nextLine();
-                return result;
+            try {
+                return Integer.parseInt(getString());
+            }catch (Throwable e) {
+                System.out.println("That is not a integer!");
             }
-            System.out.println("Invalid input, try again.");
-            scanner.nextLine();
         }
     }
 
     public double getDouble (double min, double max) {
-        System.out.print("Enter a num between " + min + " and " + max + ": ");
-        double userNum = scanner.nextDouble();
+        while (true) {
+            System.out.print("Enter a num between " + min + " and " + max + ": ");
+            double userNum = getDouble();
 
-        if (min <= userNum && userNum <= max) {
-            System.out.println("Valid!");
-            return userNum;
+            if (min <= userNum && userNum <= max) {
+                System.out.println("Valid!");
+                return userNum;
+            }
+            System.out.println("Invalid.");
         }
-
-        System.out.println("Invalid.");
-        return getDouble(min, max);
+    }
+    @SuppressWarnings("all")
+    public double getDouble () {
+        while (true) {
+            try {
+                String aString = getString();
+                return Double.valueOf(aString);
+            }catch (Throwable e) {
+                System.out.println("That is not a number!");
+            }
+        }
     }
 
-    public double getDouble () {
-        System.out.print("Enter a double num: ");
-        return scanner.nextDouble();
+    public double getDouble (String prompt) {
+        System.out.printf("%s", prompt);
+        while (true) {
+            try {
+                return Double.parseDouble(getString());
+            }catch (Throwable e) {
+                System.out.println("That is not a number!");
+            }
+        }
     }
 
     public void close() {
