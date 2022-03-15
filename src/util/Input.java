@@ -65,7 +65,7 @@ public class Input {
         while (true) {
             try {
                 return Integer.parseInt(getString());
-            }catch (Throwable e) {
+            }catch (NumberFormatException e) {
                 System.out.println("That is not a integer!");
             }
         }
@@ -74,13 +74,7 @@ public class Input {
     public int getInt (String prompt) {
         System.out.printf("%s", prompt);
 
-        while (true) {
-            try {
-                return Integer.parseInt(getString());
-            }catch (Throwable e) {
-                System.out.println("That is not a integer!");
-            }
-        }
+        return getInt();
     }
 
     public double getDouble (double min, double max) {

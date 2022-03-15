@@ -1,0 +1,6 @@
+apple
+strawberry
+orange
+raspberry
+plum
+banana
