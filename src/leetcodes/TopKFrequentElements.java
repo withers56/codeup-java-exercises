@@ -4,6 +4,11 @@ import java.io.ObjectOutput;
 import java.util.*;
 
 public class TopKFrequentElements {
+    /*
+    COMPLETED <(/-_-/)>
+    Runtime: 22 ms, faster than 31.03% of Java online submissions for Top K Frequent Elements.
+    Memory Usage: 47.4 MB, less than 75.05% of Java online submissions for Top K Frequent Elements.
+     */
 
     public static void main(String[] args) {
 
