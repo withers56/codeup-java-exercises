@@ -3,6 +3,7 @@ package main;
 import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Tests {
@@ -28,6 +29,7 @@ public class Tests {
 
         String[] firstStringChars = s.split("");
         String[] secondStringChars = t.split("");
+
 
         ArrayList<String> firstCharsArrayList = new ArrayList<>();
 
