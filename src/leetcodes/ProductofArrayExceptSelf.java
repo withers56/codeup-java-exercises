@@ -10,7 +10,7 @@ public class ProductofArrayExceptSelf {
     public static void main(String[] args) {
         ProductofArrayExceptSelf question = new ProductofArrayExceptSelf();
 
-        int[] nums = {1,2,3,4};
+        int[] nums = {0, 0};
 
         int[] soulution = question.productExceptSelf(nums);
 
@@ -19,21 +19,47 @@ public class ProductofArrayExceptSelf {
 
     public int[] productExceptSelf(int[] nums) {
         int[] arrayOfProducts = new int[nums.length];
+        int productOfAllNumbers = 1;
+        int productOfAllNumbersIfZero = 1;
+        boolean hasZero = false;
+
 
         for (int i = 0; i < nums.length; i++) {
-            int currentNumber = nums[i];
-            int currentNumberProduct = 1;
-
-            for (int j = 0; j < nums.length; j++) {
-                if (j != i) {
-
-                    currentNumberProduct *= nums[j];
-                }
+            if (nums[i] != 0) {
+                productOfAllNumbersIfZero *= nums[i];
             }
-
-            arrayOfProducts[i] = currentNumberProduct;
+            productOfAllNumbers *= nums[i];
         }
 
+        System.out.println(productOfAllNumbers);
+        System.out.println(productOfAllNumbersIfZero);
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                arrayOfProducts[i] = productOfAllNumbersIfZero;
+                continue;
+            }
+
+            arrayOfProducts[i] = productOfAllNumbers / nums[i];
+        }
+
+//        for (int i = 0; i < nums.length; i++) {
+//            int currentNumber = nums[i];
+//            int currentNumberProduct = 1;
+//
+//            for (int j = 0; j < nums.length; j++) {
+//                if (j != i) {
+//
+//                    currentNumberProduct *= nums[j];
+//                }
+//            }
+//
+//            arrayOfProducts[i] = currentNumberProduct;
+//        }
+
+//        if (hasZero) {
+//            return
+//        }
         return arrayOfProducts;
     }
 }
