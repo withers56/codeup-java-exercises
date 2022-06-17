@@ -6,7 +6,7 @@ import java.util.Arrays;
 //elements of nums except nums[i].
 //The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 public class ProductofArrayExceptSelf {
-
+//TODO: refactor to where i dont used nested for loop, takes too long on larger inputs.
     public static void main(String[] args) {
         ProductofArrayExceptSelf question = new ProductofArrayExceptSelf();
 
