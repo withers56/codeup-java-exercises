@@ -28,10 +28,40 @@ public class TwoSumII {
                 System.out.println(numbers[j]);
                 if (numbers[i] + numbers[j] == target) {
                     solution = new int[]{i + 1, j + 1};
+                    return solution;
                 }
             }
         }
 
         return solution;
     }
+
+
+    /*
+    * This method starts at both ends of the array, it checks to see if equal, if not then if the total is less than the target,
+    * the starting index increases to get a larger number, if its bigger than the target, the ending index increases to get a smaller
+    *  total.
+    * */
+//    public int[] twoSum(int[] numbers, int target) {
+//        int a_pointer = 0;
+//        int b_pointer = numbers.length - 1;
+//        int num_a, num_b;
+//
+//        while(a_pointer < b_pointer) {
+//            num_a = numbers[a_pointer];
+//            num_b = numbers[b_pointer];
+//
+//            if(num_a + num_b == target) break;
+//
+//            if(num_a + num_b < target) {
+//                a_pointer++;
+//                continue;
+//            }
+//
+//            b_pointer--;
+//
+//        }
+//
+//        return new int[]{a_pointer + 1, b_pointer + 1};
+//    }
 }
