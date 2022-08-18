@@ -14,34 +14,33 @@ public class WhoLikesIt {
     public static void main(String[] args) {
         String[] names = {"me", "you"};
 
-        whoLikesIt(new String[]{});
-        whoLikesIt(new String[]{"Peter"});
-        whoLikesIt(new String[]{"Jacob", "Alex"});
-        whoLikesIt(new String[]{"Max", "John", "Mark"});
-        whoLikesIt(new String[]{"Alex", "Jacob", "Mark", "Max"});
-        whoLikesIt(new String[]{"Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max"});
+        whoLikesIt();
+        whoLikesIt("Peter");
+        whoLikesIt("Jacob", "Alex");
+        whoLikesIt("Max", "John", "Mark");
+        whoLikesIt("Alex", "Jacob", "Mark", "Max");
+        whoLikesIt("Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max","Alex", "Jacob", "Mark", "Max");
     }
 
-    public static String whoLikesIt(String[] names) {
+    public static String whoLikesIt(String... names) {
         //Do your magic here
 
         switch (names.length) {
             case 0:
                 System.out.println("no one likes this");
-                break;
+                return "no one likes this";
             case 1:
                 System.out.println(names[0] + " likes this");
-                break;
+                return names[0] + " likes this";
             case 2:
                 System.out.println(names[0] + " and " + names[1] + " like this");
-                break;
+                return names[0] + " and " + names[1] + " like this";
             case 3:
                 System.out.println(names[0] + ", " + names[1] + " and " + names[2] + " like this");
-                break;
+                return names[0] + ", " + names[1] + " and " + names[2] + " like this";
             default:
                 System.out.println(names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this");
+                return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
         }
-
-        return "";
     }
 }
